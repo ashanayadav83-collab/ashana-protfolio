@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ashana | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff5fb;
+            color: #3d2435;
+        }
+
+        /* NAVBAR */
+        header {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d63384;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3d2435;
+            margin-left: 25px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #d63384;
+        }
+
+        /* HOME */
+        #home {
+            min-height: 100vh;
+            padding: 140px 8% 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .home-text {
+            max-width: 600px;
+        }
+
+        .home-text h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .home-text h1 span {
+            color: #d63384;
+        }
+
+        .home-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .home-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #a61e62;
+        }
+
+        .home-image {
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            border: 8px solid #f3a6ce;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #ffe0ef;
+        }
+
+        .home-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* COMMON SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 38px;
+            color: #d63384;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .skill-card h3 {
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        /* PROJECTS */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .project-card h3 {
+            color: #d63384;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .education {
+            background: white;
+        }
+
+        .education-box {
+            max-width: 700px;
+            margin: auto;
+            background: #fff5fb;
+            padding: 30px;
+            border-left: 5px solid #d63384;
+            margin-bottom: 20px;
+        }
+
+        .education-box h3 {
+            color: #d63384;
+            margin-bottom: 8px;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin: 12px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #3d2435;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav a {
+                margin-left: 12px;
+                font-size: 14px;
+            }
+
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 150px;
+            }
+
+            .home-text h1 {
+                font-size: 45px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 5px 8px;
+                font-size: 13px;
+            }
+
+            #home {
+                padding-top: 160px;
+            }
+
+            .home-image {
+                width: 230px;
+                height: 230px;
+            }
+
+            .home-text h1 {
+                font-size: 36px;
+            }
+
+            .home-text h2 {
+                font-size: 22px;
+            }
+
+            .home-text p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .title {
+                font-size: 30px;
+            }
+
+            .skills-container,
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">Ashana ♡</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home">
+
+        <div class="home-text">
+            <h1>Hello, I'm <span>Ashana</span></h1>
+
+            <h2>Computer Science Student 👩‍💻</h2>
+
+            <p>
+                Welcome to my personal portfolio website.
+                I am passionate about technology, web development
+                and learning new skills.
+            </p>
+
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+
+        <div class="home-image">
+            <!-- Apni photo ke liye image.jpg ko replace karo -->
+            <img src="image.jpg" alt="Ashana">
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+        <h2 class="title">About Me</h2>
+
+        <p>
+            I am a Computer Science student interested in web development,
+            programming and technology. I enjoy creating websites and
+            improving my technical skills. My goal is to build a successful
+            career in the IT industry.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2 class="title">My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Creating structured and modern web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Designing beautiful and responsive websites.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Basic programming and problem solving.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Object-oriented programming fundamentals.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2 class="title">My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>🌸 Personal Portfolio</h3>
+                <p>
+                    A responsive portfolio website created using
+                    HTML and CSS.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>📚 Library Management</h3>
+                <p>
+                    A basic project concept for managing books,
+                    students and library records.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>💻 Web Development</h3>
+                <p>
+                    A collection of simple web pages created
+                    using HTML and CSS.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education" class="education">
+
+        <h2 class="title">Education</h2>
+
+        <div class="education-box">
+            <h3>Diploma in Computer Science</h3>
+            <p>DSEU Kasturba College</p>
+        </div>
+
+        <div class="education-box">
+            <h3>Computer Science Engineering</h3>
+            <p>Interested in Web Development and Programming</p>
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+
+        <h2 class="title">Contact Me</h2>
+
+        <p>📧 Email: ashanayadav83@gmail.com</p>
+        <p>📱 Phone: 8700436512</p>
+        <p>📍 Delhi, India</p>
+
+        <br>
+
+        <a href="mailto:yourmail@example.com" class="btn">
+            Send Message
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Ashana | Personal Portfolio ♡</p>
+    </footer>
+
+</body>
+</html>
